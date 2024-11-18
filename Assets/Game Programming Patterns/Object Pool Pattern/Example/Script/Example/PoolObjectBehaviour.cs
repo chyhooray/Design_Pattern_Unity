@@ -17,7 +17,7 @@ namespace ObjectPoolPatternExample
                 return;
             }
 
-            GetComponent<Rigidbody>().velocity = new Vector3(0, Random.Range(-10, 11), 0);
+            GetComponent<Rigidbody>().linearVelocity = new Vector3(0, Random.Range(-10, 11), 0);
             GetComponent<Rigidbody>().angularVelocity = new Vector3(0, Random.Range(-10, 11), 0);
         }
 

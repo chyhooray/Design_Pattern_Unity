@@ -33,3 +33,6 @@ sysinfo.txt
 *.apk
 *.unitypackage
 *.csproj
+.vsconfig
+Logs/
+UserSettings/
