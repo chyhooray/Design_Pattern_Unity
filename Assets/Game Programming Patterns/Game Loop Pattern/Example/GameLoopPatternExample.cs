@@ -9,7 +9,9 @@ using System.Collections;
 
 namespace GameLoopPatternExample
 {
-
+    /// <summary>
+    /// 游戏编程模式——游戏循环模式
+    /// </summary>
     public class GameLoopPatternExample : MonoBehaviour
     {
         GameLoopManager GameLoop = new GameLoopManager();
@@ -31,7 +33,7 @@ namespace GameLoopPatternExample
         /// </summary>
         void DoGameLoop()
         {
-            if (GameLoop==null)
+            if (GameLoop == null)
             {
                 GameLoop = new GameLoopManager();
             }
@@ -50,16 +52,16 @@ namespace GameLoopPatternExample
         /// <summary>
         /// 游戏更新的粒度
         /// </summary>
-       public const float MS_PER_UPDATE = 0.06F;
-       
+        public const float MS_PER_UPDATE = 0.06F;
+
         /// <summary>
         /// 进行游戏循环
         /// </summary>
-       public  void DoGameLoop()
+        public void DoGameLoop()
         {
             double previous = Time.realtimeSinceStartup;
             double lag = 0.0;
-            if (Time.realtimeSinceStartup==0f)
+            if (Time.realtimeSinceStartup == 0f)
             {
                 return;
             }
@@ -95,9 +97,9 @@ namespace GameLoopPatternExample
             }
         }
 
-       /// <summary>
-       /// 进行渲染
-       /// </summary>
+        /// <summary>
+        /// 进行渲染
+        /// </summary>
         void Render()
         {
             //do render

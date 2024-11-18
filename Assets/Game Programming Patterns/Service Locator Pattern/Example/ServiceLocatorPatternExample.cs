@@ -8,6 +8,9 @@ using System;
 
 namespace ServiceLocatorPatternExample
 {
+    /// <summary>
+    /// 游戏编程模式——服务定位器模式
+    /// </summary>
     public class ServiceLocatorPatternExample : MonoBehaviour
     {
         void Start()
@@ -22,8 +25,8 @@ namespace ServiceLocatorPatternExample
             //播放声音
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                var audio=ServiceLocator.GetAudioService();
-                if (audio!=null)
+                var audio = ServiceLocator.GetAudioService();
+                if (audio != null)
                 {
                     audio.PlaySound(1);
                 }
@@ -123,7 +126,7 @@ namespace ServiceLocatorPatternExample
         public void PlaySound(int soundID)
         {
             // Play sound using console audio api...
-            Debug.Log("Play Sound ! ID = "+soundID.ToString());
+            Debug.Log("Play Sound ! ID = " + soundID.ToString());
         }
 
         public void StopSound(int soundID)

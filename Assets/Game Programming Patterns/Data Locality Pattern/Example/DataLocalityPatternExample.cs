@@ -8,6 +8,9 @@ using System;
 
 namespace DataLocalityPatternExample
 {
+    /// <summary>
+    /// 游戏编程模式——数据局部性模式
+    /// </summary>
     public class DataLocalityPatternExample : MonoBehaviour
     {
         GameX gameProject;
@@ -20,7 +23,7 @@ namespace DataLocalityPatternExample
 
         void Update()
         {
-            if (gameProject!=null)
+            if (gameProject != null)
             {
                 gameProject.Update();
             }
@@ -61,7 +64,7 @@ namespace DataLocalityPatternExample
             // Process AI.
             for (int i = 0; i < numEntities; i++)
             {
-                if (aiComponents!=null && aiComponents.Length>i && aiComponents[i]!= null)
+                if (aiComponents != null && aiComponents.Length > i && aiComponents[i] != null)
                 {
                     aiComponents[i].Update();
                 }
@@ -137,4 +140,4 @@ namespace DataLocalityPatternExample
         }
 
     }
-    }
+}

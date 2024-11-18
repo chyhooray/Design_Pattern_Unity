@@ -7,10 +7,12 @@ using System.Collections;
 
 namespace FactoryMethodStructure
 {
-   
+    /// <summary>
+    /// 创建型模式--工厂方法模式
+    /// </summary>
     public class FactoryMethodStructure : MonoBehaviour
     {
-	    void Start ( )
+        void Start()
         {
             // An array of creators
             Creator[] creators = new Creator[2];
@@ -22,7 +24,7 @@ namespace FactoryMethodStructure
             foreach (Creator creator in creators)
             {
                 Product product = creator.FactoryMethod();
-                Debug.Log("Created "+product.GetType().Name);
+                Debug.Log("Created " + product.GetType().Name);
             }
         }
     }

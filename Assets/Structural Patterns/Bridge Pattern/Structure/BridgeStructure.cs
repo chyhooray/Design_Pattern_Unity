@@ -5,9 +5,12 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// 结构型模式--桥接模式
+/// </summary>
 public class BridgeStructure : MonoBehaviour
 {
-	void Start ( )
+    void Start()
     {
         Abstraction ab = new RefinedAbstraction();
 

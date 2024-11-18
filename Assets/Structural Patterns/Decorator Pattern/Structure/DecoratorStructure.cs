@@ -7,9 +7,12 @@ using System.Collections;
 
 namespace DecoratorStructure
 {
+    /// <summary>
+    /// 结构型模式--装饰模式
+    /// </summary>
     public class DecoratorStructure : MonoBehaviour
     {
-	    void Start ( )
+        void Start()
         {
             // Create ConcreteComponent and two Decorators
             ConcreteComponent c = new ConcreteComponent();

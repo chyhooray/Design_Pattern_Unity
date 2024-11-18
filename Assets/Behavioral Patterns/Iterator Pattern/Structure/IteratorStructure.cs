@@ -5,10 +5,13 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// 行为型模式--迭代器模式
+/// </summary>
 public class IteratorStructure : MonoBehaviour
 {
-	void Start ( )
-	{
+    void Start()
+    {
         ConcreteAggregate a = new ConcreteAggregate();
         a[0] = "Item A";
         a[1] = "Item B";
@@ -29,92 +32,92 @@ public class IteratorStructure : MonoBehaviour
     }
 }
 
-    /// <summary>
-    /// The 'Aggregate' abstract class
-    /// </summary>
-    abstract class Aggregate
+/// <summary>
+/// The 'Aggregate' abstract class
+/// </summary>
+abstract class Aggregate
+{
+    public abstract Iterator CreateIterator();
+}
+
+/// <summary>
+/// The 'ConcreteAggregate' class
+/// </summary>
+class ConcreteAggregate : Aggregate
+{
+    private ArrayList _items = new ArrayList();
+
+    public override Iterator CreateIterator()
     {
-        public abstract Iterator CreateIterator();
+        return new ConcreteIterator(this);
     }
 
-    /// <summary>
-    /// The 'ConcreteAggregate' class
-    /// </summary>
-    class ConcreteAggregate : Aggregate
+    // Gets item count
+    public int Count
     {
-        private ArrayList _items = new ArrayList();
-
-        public override Iterator CreateIterator()
-        {
-            return new ConcreteIterator(this);
-        }
-
-        // Gets item count
-        public int Count
-        {
-            get { return _items.Count; }
-        }
-
-        // Indexer
-        public object this[int index]
-        {
-            get { return _items[index]; }
-            set { _items.Insert(index, value); }
-        }
+        get { return _items.Count; }
     }
 
-    /// <summary>
-    /// The 'Iterator' abstract class
-    /// </summary>
-    abstract class Iterator
+    // Indexer
+    public object this[int index]
     {
-        public abstract object First();
-        public abstract object Next();
-        public abstract bool IsDone();
-        public abstract object CurrentItem();
+        get { return _items[index]; }
+        set { _items.Insert(index, value); }
+    }
+}
+
+/// <summary>
+/// The 'Iterator' abstract class
+/// </summary>
+abstract class Iterator
+{
+    public abstract object First();
+    public abstract object Next();
+    public abstract bool IsDone();
+    public abstract object CurrentItem();
+}
+
+/// <summary>
+/// The 'ConcreteIterator' class
+/// </summary>
+class ConcreteIterator : Iterator
+{
+    private ConcreteAggregate _aggregate;
+    private int _current = 0;
+
+    // Constructor
+    public ConcreteIterator(ConcreteAggregate aggregate)
+    {
+        this._aggregate = aggregate;
     }
 
-    /// <summary>
-    /// The 'ConcreteIterator' class
-    /// </summary>
-    class ConcreteIterator : Iterator
+    // Gets first iteration item
+    public override object First()
     {
-        private ConcreteAggregate _aggregate;
-        private int _current = 0;
-
-        // Constructor
-        public ConcreteIterator(ConcreteAggregate aggregate)
-        {
-            this._aggregate = aggregate;
-        }
-
-        // Gets first iteration item
-        public override object First()
-        {
-            return _aggregate[0];
-        }
-
-        // Gets next iteration item
-        public override object Next()
-        {
-            object ret = null;
-            if (_current < _aggregate.Count - 1)
-            {
-                ret = _aggregate[++_current];
-            }
-
-            return ret;
-        }
-
-        // Gets current iteration item
-        public override object CurrentItem()
-        {
-            return _aggregate[_current];
-        }
-
-        // Gets whether iterations are complete
-        public override bool IsDone()
-        {
-            return _current >= _aggregate.Count;
-        }
+        return _aggregate[0];
     }
+
+    // Gets next iteration item
+    public override object Next()
+    {
+        object ret = null;
+        if (_current < _aggregate.Count - 1)
+        {
+            ret = _aggregate[++_current];
+        }
+
+        return ret;
+    }
+
+    // Gets current iteration item
+    public override object CurrentItem()
+    {
+        return _aggregate[_current];
+    }
+
+    // Gets whether iterations are complete
+    public override bool IsDone()
+    {
+        return _current >= _aggregate.Count;
+    }
+}

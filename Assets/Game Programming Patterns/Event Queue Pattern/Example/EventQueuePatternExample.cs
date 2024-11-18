@@ -11,6 +11,9 @@ using System.Collections.Generic;
 
 namespace EventQueuePatternExample
 {
+    /// <summary>
+    /// 游戏编程模式——事件队列模式
+    /// </summary>
     public class EventQueuePatternExample : MonoBehaviour
     {
         private Dictionary<MessagePriority, string> priorityLookup = new Dictionary<MessagePriority, string>();

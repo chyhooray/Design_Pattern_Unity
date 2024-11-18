@@ -28,6 +28,9 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// 结构型模式--享元模式
+/// </summary>
 public class FlyweightStructure : MonoBehaviour
 {
     void Start()

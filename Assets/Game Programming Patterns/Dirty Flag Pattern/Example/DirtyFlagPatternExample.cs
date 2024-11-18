@@ -8,10 +8,14 @@ using System;
 
 namespace DirtyFlagPatternExample
 {
+    /// <summary>
+    /// 游戏编程模式——脏标记模式
+    /// </summary>
     public class DirtyFlagPatternExample : MonoBehaviour
     {
         GraphNode graphNode = new GraphNode(new MeshEX());
         TransformEX parentWorldTransform = new TransformEX();
+
         void Start()
         {
             //初始化子节点

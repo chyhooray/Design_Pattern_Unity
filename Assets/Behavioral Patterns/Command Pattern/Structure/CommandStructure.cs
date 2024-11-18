@@ -7,9 +7,12 @@ using System.Collections;
 
 namespace CommandStructure
 {
+    /// <summary>
+    /// 行为型模式--命令模式
+    /// </summary>
     public class CommandStructure : MonoBehaviour
     {
-	    void Start ( )
+        void Start()
         {
             // Create receiver, command, and invoker
             Receiver receiver = new Receiver();
@@ -62,7 +65,7 @@ namespace CommandStructure
     {
         public void Action()
         {
-          Debug.Log("Called Receiver.Action()");
+            Debug.Log("Called Receiver.Action()");
         }
     }
 

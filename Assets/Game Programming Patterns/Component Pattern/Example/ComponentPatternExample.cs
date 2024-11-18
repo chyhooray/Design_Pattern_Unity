@@ -8,7 +8,9 @@ using System.Collections.Generic;
 
 namespace ComponentPatternExample
 {
-
+    /// <summary>
+    /// 游戏编程模式——组件模式
+    /// </summary>
     public class ComponentPatternExample : MonoBehaviour
     {
         RPGGame rpgGame = new RPGGame();

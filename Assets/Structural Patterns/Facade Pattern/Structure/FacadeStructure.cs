@@ -5,9 +5,12 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// 结构型模式--外观模式
+/// </summary>
 public class FacadeStructure : MonoBehaviour
 {
-	void Start ( )
+    void Start()
     {
         Facade facade = new Facade();
 

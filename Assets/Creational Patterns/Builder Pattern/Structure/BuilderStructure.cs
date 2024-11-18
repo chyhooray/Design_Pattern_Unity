@@ -6,6 +6,9 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+/// <summary>
+/// 创建型模式--建造者模式
+/// </summary>
 public class BuilderStructure : MonoBehaviour
 {
 	void Start ( )

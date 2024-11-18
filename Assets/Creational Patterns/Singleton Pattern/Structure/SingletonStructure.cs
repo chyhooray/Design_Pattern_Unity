@@ -6,6 +6,9 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+/// <summary>
+/// 创建型模式--单例模式
+/// </summary>
 public class SingletonStructure : MonoBehaviour
 {
 

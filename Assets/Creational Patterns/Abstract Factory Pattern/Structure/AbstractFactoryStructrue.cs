@@ -5,6 +5,9 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// 创建型模式--抽象工厂模式
+/// </summary>
 public class AbstractFactoryStructrue : MonoBehaviour
 {
     void Start()

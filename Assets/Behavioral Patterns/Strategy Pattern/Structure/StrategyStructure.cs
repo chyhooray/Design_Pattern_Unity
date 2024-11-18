@@ -7,9 +7,12 @@ using System.Collections;
 
 namespace StrategyStructure
 {
+    /// <summary>
+    /// 行为型模式--策略模式
+    /// </summary>
     public class StrategyStructure : MonoBehaviour
     {
-	    void Start ( )
+        void Start()
         {
             Context context;
 

@@ -6,6 +6,9 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+/// <summary>
+/// 游戏编程模式——子类沙盒模式
+/// </summary>
 public class TestSubclassSandbox : MonoBehaviour
 {
     //A list that will store all superpowers（一个存储所有超能力的List）

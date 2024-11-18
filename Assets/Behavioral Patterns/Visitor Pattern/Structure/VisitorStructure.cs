@@ -6,9 +6,12 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+/// <summary>
+/// 行为型模式--访问者模式
+/// </summary>
 public class VisitorStructure : MonoBehaviour
 {
-	void Start ( )
+    void Start()
     {
         // Setup structure
         ObjectStructure o = new ObjectStructure();
@@ -41,7 +44,7 @@ class ConcreteVisitor1 : Visitor
 {
     public override void VisitConcreteElementA(ConcreteElementA concreteElementA)
     {
-        Debug.Log(concreteElementA.GetType().Name+" visited by "+this.GetType().Name);
+        Debug.Log(concreteElementA.GetType().Name + " visited by " + this.GetType().Name);
     }
 
     public override void VisitConcreteElementB(ConcreteElementB concreteElementB)
@@ -129,4 +132,3 @@ class ObjectStructure
         }
     }
 }
- 

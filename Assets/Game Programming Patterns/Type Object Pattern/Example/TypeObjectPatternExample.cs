@@ -13,6 +13,9 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// 游戏编程模式——类型对象模式
+/// </summary>
 public class TypeObjectPatternExample : MonoBehaviour
 {
     void Start()

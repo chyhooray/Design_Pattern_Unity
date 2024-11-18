@@ -5,6 +5,9 @@ using System.Collections.Generic;
 
 namespace ObjectPoolPatternExample
 {
+    /// <summary>
+    /// 游戏编程模式——对象池模式
+    /// </summary>
     public class ObjectPoolExample : MonoBehaviour
     {
         //池名称

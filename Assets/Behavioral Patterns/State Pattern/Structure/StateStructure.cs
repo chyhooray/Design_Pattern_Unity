@@ -7,10 +7,12 @@ using System.Collections;
 
 namespace StateStructure
 {
-
+    /// <summary>
+    /// 行为型模式--状态模式
+    /// </summary>
     public class StateStructure : MonoBehaviour
     {
-	    void Start ( )
+        void Start()
         {
             // Setup context in a state
             Context c = new Context(new ConcreteStateA());
@@ -73,7 +75,7 @@ namespace StateStructure
             set
             {
                 _state = value;
-              Debug.Log("State: " +_state.GetType().Name);
+                Debug.Log("State: " + _state.GetType().Name);
             }
         }
 

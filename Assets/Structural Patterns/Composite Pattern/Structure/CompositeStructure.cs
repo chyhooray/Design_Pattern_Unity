@@ -7,9 +7,12 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+/// <summary>
+/// 结构型模式--组合模式
+/// </summary>
 public class CompositeStructure : MonoBehaviour
 {
-	void Start ( )
+    void Start()
     {
         // Create a tree structure
         Composite root = new Composite("root");

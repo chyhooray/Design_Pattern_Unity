@@ -5,10 +5,13 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// 行为型模式--模板方法模式
+/// </summary>
 public class TemplateMethodStructure : MonoBehaviour
 {
-	void Start ( )
-	{
+    void Start()
+    {
         AbstractClass aA = new ConcreteClassA();
         aA.TemplateMethod();
 

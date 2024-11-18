@@ -5,9 +5,12 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// 行为型模式--备忘录模式
+/// </summary>
 public class MementoStructure : MonoBehaviour
 {
-	void Start ( )
+    void Start()
     {
         Originator o = new Originator();
         o.State = "On";

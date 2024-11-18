@@ -29,7 +29,9 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-
+/// <summary>
+/// 行为型模式--观察者模式
+/// </summary>
 public class ObserverStructure : MonoBehaviour
 {
     void Start()
@@ -54,79 +56,79 @@ public class ObserverStructure : MonoBehaviour
 /// The 'Subject' abstract class
 /// </summary>
 abstract class Subject
+{
+    private List<Observer> _observers = new List<Observer>();
+
+    public void Attach(Observer observer)
     {
-        private List<Observer> _observers = new List<Observer>();
-
-        public void Attach(Observer observer)
-        {
-            _observers.Add(observer);
-        }
-
-        public void Detach(Observer observer)
-        {
-            _observers.Remove(observer);
-        }
-
-        public void Notify()
-        {
-            foreach (Observer o in _observers)
-            {
-                o.Update();
-            }
-        }
+        _observers.Add(observer);
     }
 
-    /// <summary>
-    /// The 'ConcreteSubject' class
-    /// </summary>
-    class ConcreteSubject : Subject
+    public void Detach(Observer observer)
     {
-        private string _subjectState;
-
-        // Gets or sets subject state
-        public string SubjectState
-        {
-            get { return _subjectState; }
-            set { _subjectState = value; }
-        }
+        _observers.Remove(observer);
     }
 
-    /// <summary>
-    /// The 'Observer' abstract class
-    /// </summary>
-    abstract class Observer
+    public void Notify()
     {
-        public abstract void Update();
+        foreach (Observer o in _observers)
+        {
+            o.Update();
+        }
     }
+}
 
-    /// <summary>
-    /// The 'ConcreteObserver' class
-    /// </summary>
-    class ConcreteObserver : Observer
+/// <summary>
+/// The 'ConcreteSubject' class
+/// </summary>
+class ConcreteSubject : Subject
+{
+    private string _subjectState;
+
+    // Gets or sets subject state
+    public string SubjectState
     {
-        private string _name;
-        private string _observerState;
-        private ConcreteSubject _subject;
+        get { return _subjectState; }
+        set { _subjectState = value; }
+    }
+}
 
-        // Constructor
-        public ConcreteObserver(
-          ConcreteSubject subject, string name)
-        {
-            this._subject = subject;
-            this._name = name;
-        }
+/// <summary>
+/// The 'Observer' abstract class
+/// </summary>
+abstract class Observer
+{
+    public abstract void Update();
+}
 
-        public override void Update()
-        {
-            _observerState = _subject.SubjectState;
-            Debug.Log("Observer "+ _name+"'s new state is "+_observerState);
+/// <summary>
+/// The 'ConcreteObserver' class
+/// </summary>
+class ConcreteObserver : Observer
+{
+    private string _name;
+    private string _observerState;
+    private ConcreteSubject _subject;
+
+    // Constructor
+    public ConcreteObserver(
+      ConcreteSubject subject, string name)
+    {
+        this._subject = subject;
+        this._name = name;
     }
 
-        // Gets or sets subject
-        public ConcreteSubject Subject
-        {
-            get { return _subject; }
-            set { _subject = value; }
-        }
+    public override void Update()
+    {
+        _observerState = _subject.SubjectState;
+        Debug.Log("Observer " + _name + "'s new state is " + _observerState);
     }
+
+    // Gets or sets subject
+    public ConcreteSubject Subject
+    {
+        get { return _subject; }
+        set { _subject = value; }
+    }
+}
 

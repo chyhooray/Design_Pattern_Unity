@@ -5,9 +5,12 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// 结构型模式--适配器模式
+/// </summary>
 public class AdapterStructure : MonoBehaviour
 {
-	void Start( )
+    void Start()
     {
         // Create adapter and place a request
         Target target = new Adapter();

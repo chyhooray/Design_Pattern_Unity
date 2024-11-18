@@ -5,6 +5,9 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// 行为型模式--中介者模式
+/// </summary>
 public class MediatorStructure : MonoBehaviour
 {
     void Start()
@@ -28,7 +31,7 @@ public class MediatorStructure : MonoBehaviour
 /// </summary>
 abstract class Mediator
 {
-    public abstract void Send(string message,Colleague colleague);
+    public abstract void Send(string message, Colleague colleague);
 }
 
 /// <summary>
@@ -49,7 +52,7 @@ class ConcreteMediator : Mediator
         set { _colleague2 = value; }
     }
 
-    public override void Send(string message,Colleague colleague)
+    public override void Send(string message, Colleague colleague)
     {
         if (colleague == _colleague1)
         {
@@ -94,7 +97,7 @@ class ConcreteColleague1 : Colleague
 
     public void Notify(string message)
     {
-        Debug.Log("Colleague1 gets message: "+ message);
+        Debug.Log("Colleague1 gets message: " + message);
     }
 }
 
@@ -116,6 +119,6 @@ class ConcreteColleague2 : Colleague
 
     public void Notify(string message)
     {
-        Debug.Log("Colleague2 gets message: "+ message);
+        Debug.Log("Colleague2 gets message: " + message);
     }
 }

@@ -7,10 +7,12 @@ using System.Collections;
 
 namespace ProxyStructure
 {
-
+    /// <summary>
+    /// 结构型模式--代理模式
+    /// </summary>
     public class ProxyStructure : MonoBehaviour
     {
-	    void Start ( )
+        void Start()
         {
             // Create proxy and request a service
             Proxy proxy = new Proxy();

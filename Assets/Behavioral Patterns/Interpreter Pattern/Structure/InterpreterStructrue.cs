@@ -5,9 +5,12 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// 行为型模式--解释器模式
+/// </summary>
 public class InterpreterStructrue : MonoBehaviour
 {
-	void Start ( )
+    void Start()
     {
         Context context = new Context();
 
